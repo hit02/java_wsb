@@ -12,7 +12,7 @@ public class Human extends Animal {
     Car vehicle;
 
     public Human() {
-        super("Human");
+        super("Homo Sapiens");
     }
 
     void setCar(Car vehicle){
