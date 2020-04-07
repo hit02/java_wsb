@@ -1,4 +1,4 @@
-package com.company;
+package com.company.devices;
 
 public class Car {
     public final String producer;
@@ -9,7 +9,7 @@ public class Car {
     public String plates;
     public Double volume = 1000.0;
 
-    Car(String producer, String model, Integer yearOfProduction, Double engineVolume){
+    public Car(String producer, String model, Integer yearOfProduction, Double engineVolume){
         this.producer = producer;
         this.model = model;
         this.yearOfProduction = yearOfProduction;
