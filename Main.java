@@ -12,14 +12,21 @@ public class Main {
 
 
         Human me = new Human();
-        me.firstName = "Mil";
-        me.lastName = "Chr";
+        me.firstName = "Adam";
+        me.lastName = "Kowalski";
         me.pet = dog;
 
-        System.out.println(me.pet.name);
+        Car dirtyOne = new Car("Fiat", "Bravo", 2015, 1.8);
+        dirtyOne.plates = "GDA1234";
+        me.setCar(dirtyOne);
+        Human wife = new Human();
+        wife.firstName = "Żona";
+        wife.lastName = "Adama";
+        wife.setCar(dirtyOne);
 
-        dog.feed();
-
-
+        System.out.println(me.toString());
+        System.out.println(wife.toString());
+        System.out.println(dirtyOne.toString());
+        System.out.println(dog.toString());
     }
 }

@@ -12,6 +12,10 @@ public class Animal {
     static final Double DEFAULT_LION_WEIGH = 190.0;
     static final Double DEFAULT_MOUSE_WEIGH = .5;
 
+    public String toString() {
+        return "Pet " + species + " " + name + " " + weight;
+    }
+
     public Animal(String species) {
         this.species = species;
         if(species=="dog"){
