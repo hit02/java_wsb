@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
+public class Animal implements Salable{
     String name;
     final String species;
     private Double weight;
@@ -53,4 +53,12 @@ public class Animal {
         }
     }
 
+    @Override
+    public void sell() {
+        if(this instanceof Human) {
+            System.out.println("No");
+        } else {
+            System.out.println("You sold " + this.toString());
+        }
+    }
 }
