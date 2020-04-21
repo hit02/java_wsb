@@ -30,5 +30,11 @@ public class Main {
         System.out.println(wife);
         System.out.println(dirtyOne);
         System.out.println(dog);
+
+        me.cash = 0;
+        wife.cash = 0;
+        me.sellPet(wife, 200);
+        wife.cash = 200;
+        me.sellPet(wife, 200);
     }
 }

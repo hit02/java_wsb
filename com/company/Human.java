@@ -13,6 +13,7 @@ public class Human extends Animal {
     Animal pet;
     private Double salary;
     Car vehicle;
+    Integer cash;
 
     public Human() {
         super("Homo Sapiens");
@@ -39,6 +40,18 @@ public class Human extends Animal {
             System.out.println("ZUS and US already know that");
             System.out.println("Please take your annex to the contract from Mrs Hanna from HR");
             this.salary = salary;
+        }
+    }
+
+    public void sellPet(Human buyer, Integer price){
+        if(buyer.cash >= price){
+            buyer.cash -= price;
+            this.cash += price;
+            buyer.pet = this.pet; //FIXME overrides buyers pet!
+            this.pet = null;
+            System.out.println("Sold " + buyer.pet + " to " + buyer + " for " + price);
+        } else {
+            System.out.println(buyer + " has not enough money");
         }
     }
 
