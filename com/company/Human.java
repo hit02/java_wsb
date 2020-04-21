@@ -12,7 +12,7 @@ public class Human extends Animal {
     Phone phone;
     Animal pet;
     private Double salary;
-    Car vehicle;
+    private Car vehicle;
     Integer cash;
 
     public Human() {
@@ -52,6 +52,22 @@ public class Human extends Animal {
             System.out.println("Sold " + buyer.pet + " to " + buyer + " for " + price);
         } else {
             System.out.println(buyer + " has not enough money");
+        }
+    }
+
+    public Car getVehicle() {
+        return this.vehicle;
+    }
+
+    public void setVehicle(Car vehicle){
+        if(this.salary > vehicle.value) {
+            this.vehicle = vehicle;
+            System.out.println("You bought it");
+        } else if(this.salary * 12 > vehicle.value) {
+            this.vehicle = vehicle;
+            System.out.println("You bought it and got a credit");
+        } else {
+            System.out.println("You can't afford it");
         }
     }
 
