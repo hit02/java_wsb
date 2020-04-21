@@ -1,6 +1,8 @@
 package com.company.devices;
 
-public class Device {
+import com.company.Salable;
+
+public class Device implements Salable {
     public final String producer;
     public final String model;
     public final Integer yearOfProduction;
@@ -9,5 +11,10 @@ public class Device {
         this.producer = producer;
         this.model = model;
         this.yearOfProduction = yearOfProduction;
+    }
+
+    @Override
+    public void sell() {
+        System.out.println("You sold " + this.toString());
     }
 }
