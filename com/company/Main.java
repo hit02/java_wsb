@@ -1,9 +1,7 @@
 package com.company;
 
-import com.company.animals.Animal;
 import com.company.animals.FarmAnimal;
-import com.company.animals.Human;
-import com.company.devices.Car;
+import com.company.devices.LPG;
 
 public class Main {
 
@@ -11,7 +9,8 @@ public class Main {
         FarmAnimal lion = new FarmAnimal("lion");
         lion.feed(8.0);
         lion.beEaten();
-        Car car = new Car("car", "super", 2020, 8.0);
+        LPG car = new LPG("car", "super", 2020, 8.0);
         car.turnOn();
+        car.refuel();
     }
 }
