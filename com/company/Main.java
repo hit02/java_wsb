@@ -1,40 +1,15 @@
 package com.company;
 
+import com.company.animals.Animal;
+import com.company.animals.FarmAnimal;
+import com.company.animals.Human;
 import com.company.devices.Car;
 
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("dog");
-
-        dog.name = "Akita";
-
-        Animal lion = new Animal("lion");
-        lion.name = "leo";
-
-
-        Human me = new Human();
-        me.firstName = "Adam";
-        me.lastName = "Kowalski";
-        me.pet = dog;
-
-        Car dirtyOne = new Car("Fiat", "Bravo", 2015, 1.8);
-        dirtyOne.plates = "GDA1234";
-        me.setCar(dirtyOne);
-        Human wife = new Human();
-        wife.firstName = "Żona";
-        wife.lastName = "Adama";
-        wife.setCar(dirtyOne);
-
-        System.out.println(me);
-        System.out.println(wife);
-        System.out.println(dirtyOne);
-        System.out.println(dog);
-
-        me.cash = 0;
-        wife.cash = 0;
-        me.sellPet(wife, 200);
-        wife.cash = 200;
-        me.sellPet(wife, 200);
+        FarmAnimal lion = new FarmAnimal("lion");
+        lion.feed(8.0);
+        lion.beEaten();
     }
 }
