@@ -2,7 +2,7 @@ package com.company.devices;
 
 import com.company.Salable;
 
-public class Device implements Salable {
+public abstract class Device implements Salable {
     public final String producer;
     public final String model;
     public final Integer yearOfProduction;
@@ -17,4 +17,10 @@ public class Device implements Salable {
     public void sell() {
         System.out.println("You sold " + this.toString());
     }
+
+    public String toString() {
+        return model + "@" + producer + " " + yearOfProduction;
+    }
+
+    public abstract void turnOn();
 }

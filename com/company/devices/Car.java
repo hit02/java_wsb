@@ -14,4 +14,9 @@ public class Car extends Device {
     public String toString() {
         return "Car " + this.producer + " " + this.model + " " + this.yearOfProduction + " " + this.engineVolume;
     }
+
+    @Override
+    public void turnOn() {
+        System.out.println("wrrrm");
+    }
 }
