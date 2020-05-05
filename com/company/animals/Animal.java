@@ -9,6 +9,7 @@ public abstract class Animal implements Salable, Feedable, Edible {
     final String species;
     private Double weight;
     File pic;
+    final static Double defaultFoodWeight = 1.0;
 
     static final Double DEFAULT_DOG_WEIGHT = 8.0;
     static final Double DEFAULT_LION_WEIGH = 190.0;
@@ -47,7 +48,7 @@ public abstract class Animal implements Salable, Feedable, Edible {
 
     @Override
     public void feed() {
-        feed(1.0);
+        feed(defaultFoodWeight);
     }
 
     @Override
