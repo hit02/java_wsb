@@ -12,15 +12,26 @@ public class Human extends Animal {
     Phone phone;
     Animal pet;
     private Double salary;
-    private Car vehicle;
+    private Car[] garage;
     Integer cash;
 
-    public Human() {
+    public Human(int garageSize) {
         super("Homo Sapiens");
+        garage = new Car[garageSize];
     }
 
-    void setCar(Car vehicle){
-        this.vehicle = vehicle;
+    void setCar(Car vehicle, int index) {
+        if(index < garage.length) {
+            garage[index] = vehicle;
+        }
+    }
+
+    double valueOfAllCars() {
+        double value = .0;
+        for(Car vehicle : garage) {
+            value += vehicle.value;
+        }
+        return value;
     }
 
     public String toString() {
@@ -55,16 +66,20 @@ public class Human extends Animal {
         }
     }
 
-    public Car getVehicle() {
-        return this.vehicle;
+    public Car getVehicle(int index) {
+        // can throw an exception
+        return garage[index];
     }
 
-    public void setVehicle(Car vehicle){
+    public void setVehicle(Car vehicle, int index) {
+        if(index >= garage.length) {
+            return;
+        }
         if(this.salary > vehicle.value) {
-            this.vehicle = vehicle;
+            garage[index] = vehicle;
             System.out.println("You bought it");
         } else if(this.salary * 12 > vehicle.value) {
-            this.vehicle = vehicle;
+            garage[index] = vehicle;
             System.out.println("You bought it and got a credit");
         } else {
             System.out.println("You can't afford it");

@@ -1,6 +1,6 @@
 package com.company.devices;
 
-public abstract class Car extends Device {
+public abstract class Car extends Device implements Comparable<Car> {
     public final Double engineVolume;
     public Double value;
 
@@ -18,6 +18,11 @@ public abstract class Car extends Device {
     @Override
     public void turnOn() {
         System.out.println("wrrrm");
+    }
+
+    @Override
+    public int compareTo(Car other) {
+        return this.yearOfProduction - other.yearOfProduction;
     }
 
     public abstract void refuel();
