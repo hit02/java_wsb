@@ -1,5 +1,7 @@
 package com.company.devices;
 
+import com.company.animals.Human;
+
 public abstract class Car extends Device implements Comparable<Car> {
     public final Double engineVolume;
     public Double value;
@@ -26,4 +28,19 @@ public abstract class Car extends Device implements Comparable<Car> {
     }
 
     public abstract void refuel();
+
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if(!seller.hasCar(this)) {
+            throw new Exception("dont have this car");
+        }
+        if(!buyer.hasFreeSpace()) {
+            throw new Exception("too small garage");
+        }
+        if(buyer.getCash() < price) {
+            seller.removeCar(this);
+            buyer.addCar(this);
+            seller.setCash(seller.getCash() + price);
+            buyer.setCash(buyer.getCash() - price);
+        }
+    }
 }
